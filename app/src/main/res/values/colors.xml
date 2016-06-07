@@ -4,4 +4,12 @@
     <color name="primary">#E43F3F</color>
     <color name="primary_dark">#E12929</color>
     <color name="primary_darker">#CC1D1D</color>
+
+    <color name="su_text_gray">#A8B2BD</color>
+    <color name="su_bg_gray">#EFEFEF</color>
+    <color name="su_bg_line_gary">#EEEEEE</color>
+    <color name="su_white">#FFF</color>
+    <color name="su_black">#000</color>
+    <color name="su_text_gray_deep">#cacaca</color>
+
 </resources>

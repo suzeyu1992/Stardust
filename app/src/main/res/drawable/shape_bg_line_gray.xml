@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--实现简便颜色
+   angle  渐变的方向  从左到右为0  角度递增为逆时针旋转 -->
+    <gradient
+        android:angle="270"
+        android:startColor="#C4C4C5"
+        android:endColor="#E8E8EA"/>
+
+</shape>
