@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/su_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/su_bg_gray"/>
+
+    <ImageView
+        android:id="@+id/iv_legend"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginTop="@dimen/normal_margin_right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginRight="@dimen/normal_margin_right"
+            android:textStyle="bold"
+            android:text="我是测试内容标题"
+            android:textSize="15sp"
+            android:textColor="@color/su_text_black"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/normal_margin_right"
+            />
+        
+        <com.szy.stardust.view.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@mipmap/icon_myinfo_avatar"
+            android:layout_marginRight="@dimen/normal_margin_right"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normal_margin_right"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:text="方式方式打开房间了圣诞节福利送快递就方式打开房间了圣诞节福利送快递就方式打开房间了圣诞节福利送快递就打开房间了圣诞节福利送快递就分了就死定了开飞机上来看的减肥了开始减肥了开始减肥了跨世纪的弗拉发链接"
+        android:textSize="12sp"
+        android:textColor="@color/su_text_description"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:lineSpacingExtra="4dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/normal_margin_right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_body_classify"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginRight="@dimen/normal_margin_right"
+            android:text="Android"
+            android:textSize="12sp"
+            android:textColor="#a3cc28"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/normal_margin_right"
+            />
+
+        <ImageView
+            android:id="@+id/iv_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_action_favorite_outline"
+            android:layout_marginRight="2dp"/>
+
+        <TextView
+            android:id="@+id/tv_praise_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLength="5"
+            android:layout_marginRight="@dimen/normal_margin_right"
+            android:text="22"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/su_text_gray"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+</LinearLayout>

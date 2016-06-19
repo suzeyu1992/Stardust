@@ -29,6 +29,7 @@
             android:id="@+id/tl_tab"
             style="@style/MainFragmentTabLayout"
             android:layout_width="wrap_content"
+            android:layout_marginRight="44dp"
             android:layout_height="35dp" />
 
 
@@ -36,14 +37,13 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:background="@drawable/shape_bg_line_gray" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_main"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_marginTop="12dp"
         android:layout_weight="1"
         android:background="#00000000" />
 

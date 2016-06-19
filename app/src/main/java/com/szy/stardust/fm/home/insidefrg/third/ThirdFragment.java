@@ -1,5 +1,12 @@
 package com.szy.stardust.fm.home.insidefrg.third;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.szy.stardust.R;
 import com.szy.stardust.fm.home.insidefrg.BaseInsidePagerFragment;
 import com.szy.stardust.fm.home.myinfo.HomePagerFragment;
 
@@ -11,8 +18,9 @@ import com.szy.stardust.fm.home.myinfo.HomePagerFragment;
  */
 public class ThirdFragment extends HomePagerFragment {
     @Override
-    protected void initLoad() {
-        //对要显示的布局进行初始化添加
-        mDisplayStyle = 1;
+    protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        TextView view = new TextView(getContext());
+        view.setText("thirdFragment");
+        return view;
     }
 }

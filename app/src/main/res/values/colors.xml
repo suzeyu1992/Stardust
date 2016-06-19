@@ -6,6 +6,9 @@
     <color name="primary_darker">#CC1D1D</color>
 
     <color name="su_text_gray">#A8B2BD</color>
+    <color name="su_text_gray_3c">#ccc</color>
+    <color name="su_text_black">#333333</color>
+    <color name="su_text_description">#7A7A7A</color>
     <color name="su_bg_gray">#EFEFEF</color>
     <color name="su_bg_line_gary">#EEEEEE</color>
     <color name="su_white">#FFF</color>

@@ -6,8 +6,7 @@
    angle  渐变的方向  从左到右为0  角度递增为逆时针旋转 -->
     <gradient
         android:angle="270"
-        android:startColor="#C4C4C5"
-        android:endColor="#E8E8EA"/>
+        android:startColor="#00ff00"
+        android:endColor="#ff00ff"/>
 
-    <size android:height="1dp"/>
 </shape>

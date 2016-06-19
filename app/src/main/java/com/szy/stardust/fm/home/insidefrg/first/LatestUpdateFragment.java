@@ -1,0 +1,264 @@
+package com.szy.stardust.fm.home.insidefrg.first;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.szy.stardust.R;
+import com.szy.stardust.adapter.re.ItemClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * author: suzeyu on 16/6/17 15:48
+ * github: https://github.com/suzeyu1992
+ * -------------------------------------
+ * class description : 一级页面中第一模块中的内部小碎片fragment
+ */
+public class LatestUpdateFragment extends Fragment {
+
+    private static final String TAG = LatestUpdateFragment.class.getSimpleName();
+    private int mDisplayStatus;     //内部fragment要显示的样式模块
+    private final int DIS_COMPLEXITY = 0;               //显示最新更新类型的列表
+    private final int DIS_PLAIN = 1;               //显示功能类型类型的列表
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mDisplayStatus = getArguments().getInt("dispaly_status");
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.page_fragment_inside_home, container, false);
+        RecyclerView rv_main = (RecyclerView) view.findViewById(R.id.rv_main);
+
+        //创建一个布局管理器
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+        //关联布局管理器
+        rv_main.setLayoutManager(linearLayoutManager);
+
+        //临时模拟数据集合
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+
+
+        MyAdapter myAdapter = new MyAdapter(getContext(), strings);
+
+        //添加自定义的点击事件
+        myAdapter.setOnClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClikc(View view, int postion) {
+                Snackbar.make(view, "点击了条目:" + postion, Snackbar.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onItemLongClikc(View view, int postion) {
+                Toast.makeText(getContext(), "长按了条目" + postion, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onItemSubClick(View view, int positon) {
+
+            }
+        });
+
+        //添加分割线
+        //判断是否是最新更新的布局  还是简单布局 来决定是否添加分割线
+        if (DIS_COMPLEXITY == mDisplayStatus) {
+            rv_main.addItemDecoration(new MyItemDecoration(getContext(), R.drawable.shape_bg_line_gray, LinearLayoutManager.VERTICAL));
+        }
+
+
+        //关联数据适配器
+        rv_main.setAdapter(myAdapter);
+
+        //给RecyclerView添加动画
+        rv_main.setItemAnimator(new DefaultItemAnimator());
+        return view;
+    }
+
+    /**
+     * RecyclerView的数据适配器
+     */
+    class MyAdapter extends RecyclerView.Adapter<MyAdapter.MViewHolder> {
+
+        private Context context;
+        private List<String> mList;
+        private ItemClickListener mItemClickListener;       //自定义点击监听
+
+
+        public MyAdapter(Context context, List<String> mList) {
+            this.context = context;
+            this.mList = mList;
+        }
+
+        public void setOnClickListener(ItemClickListener mItemClickListener) {
+            this.mItemClickListener = mItemClickListener;
+        }
+
+
+        @Override
+        public MyAdapter.MViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View inflate;
+            if (mDisplayStatus == DIS_COMPLEXITY) {
+                inflate = getLayoutInflater(null).inflate(R.layout.item_recycle_complexity, parent, false);
+            } else {
+                inflate = getLayoutInflater(null).inflate(R.layout.item_recycle_plain, parent, false);
+            }
+
+            MViewHolder mViewHolder = new MViewHolder(inflate);
+            Log.d(TAG, "onCreateViewHolder:");
+
+
+            return mViewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(MyAdapter.MViewHolder holder, int position) {
+            Log.d(TAG, "onBindViewHolder: --position:" + position);
+
+
+        }
+
+
+        @Override
+        public int getItemCount() {
+            return mList.size();
+        }
+
+        public class MViewHolder extends RecyclerView.ViewHolder {
+            private ImageView mImageView;
+            private TextView mTextView;
+
+
+            public MViewHolder(View itemView) {
+                super(itemView);
+//                mImageView = (ImageView) itemView.findViewById(R.id.iv_logo);
+//                mTextView  = (TextView) itemView.findViewById(R.id.tv_description);
+
+                //给item布局添加点击事件
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (null != mItemClickListener) {
+                            mItemClickListener.onItemClikc(v, getLayoutPosition());
+
+                        }
+                    }
+                });
+
+                //给item布局添加长按点击事件
+                itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+
+                        if (null != mItemClickListener) {
+                            mItemClickListener.onItemLongClikc(v, getLayoutPosition());
+                        }
+                        return true;
+                    }
+                });
+            }
+        }
+
+    }
+
+
+    /**
+     * ItemDecoration 复写实现
+     */
+    class MyItemDecoration extends RecyclerView.ItemDecoration {
+        private Drawable mDivider;
+        private int mOritation;
+
+        public MyItemDecoration(Context context, int resId, int oritation) {
+
+            mDivider = context.getResources().getDrawable(resId);
+
+            this.mOritation = oritation;
+
+            Log.i("ItemDecorationDivider", "mOritation=" + mOritation);
+
+        }
+
+        @Override
+        public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+            super.onDraw(c, parent, state);
+        }
+
+        @Override
+        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+            if (mOritation == LinearLayoutManager.VERTICAL) {
+                final int left = parent.getPaddingLeft();
+                final int right = parent.getWidth() - parent.getPaddingRight();
+
+                final int childCount = parent.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    final View child = parent.getChildAt(i);
+                    final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                            .getLayoutParams();
+
+                    final int top = child.getBottom() + params.bottomMargin;
+                    final int bottom = top + mDivider.getIntrinsicHeight();
+                    mDivider.setBounds(left, top, right, bottom);
+                    mDivider.draw(c);
+                }
+            } else if (mOritation == LinearLayoutManager.HORIZONTAL) {
+
+                final int top = parent.getPaddingTop();
+                // final int bottom = parent.getHeight() -
+                // parent.getPaddingBottom();
+
+                final int childCount = parent.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    final View child = parent.getChildAt(i);
+                    final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                            .getLayoutParams();
+                    final int left = child.getRight() + params.rightMargin;
+                    final int right = left + mDivider.getIntrinsicHeight();
+
+                    final int bottom = child.getBottom();
+                    mDivider.setBounds(left, top, right, bottom);
+                    mDivider.draw(c);
+                }
+            }
+        }
+
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+            if (mOritation == LinearLayoutManager.VERTICAL) {
+                outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+            } else if (mOritation == LinearLayoutManager.HORIZONTAL) {
+                outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
+            }
+
+
+        }
+
+    }
+}
