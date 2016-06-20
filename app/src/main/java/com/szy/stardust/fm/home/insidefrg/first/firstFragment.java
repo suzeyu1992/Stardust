@@ -27,7 +27,7 @@ public class firstFragment extends HomePagerFragment implements View.OnClickList
     protected ViewPager vp_main;                    //内部viewpager
     protected ArrayList<DBFragment> fragments;
     private ImageView iv_tab_func;                  //决定内部要显示的tab数量和viewpager数量的功能键
-    private String[] displayArrs = {"widgets","listview","popups","graphics","animations","layout"};
+    public static final String[] displayArrs = {"widgets","graphics","popups","animations","layout"};
 
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,9 +48,10 @@ public class firstFragment extends HomePagerFragment implements View.OnClickList
                 LatestUpdateFragment frag_1 = new LatestUpdateFragment();
                 Bundle bundle_1 = new Bundle();
                 if(x == 0){
-                    bundle_1.putInt("dispaly_status",0);
+                    bundle_1.putInt("display_status",0);
                 } else{
-                    bundle_1.putInt("dispaly_status",1) ;
+                    bundle_1.putInt("display_status",1) ;
+                    bundle_1.putString("display_type",displayArrs[x]);
                 }
 
                 frag_1.setArguments(bundle_1);

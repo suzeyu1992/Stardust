@@ -1,6 +1,7 @@
 package com.szy.stardust.fm.home.insidefrg.first;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -11,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 
 import com.szy.stardust.R;
 import com.szy.stardust.adapter.re.ItemClickListener;
+import com.szy.stardust.data.bean.MainArticleBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +40,17 @@ public class LatestUpdateFragment extends Fragment {
     private int mDisplayStatus;     //内部fragment要显示的样式模块
     private final int DIS_COMPLEXITY = 0;               //显示最新更新类型的列表
     private final int DIS_PLAIN = 1;               //显示功能类型类型的列表
+    private ArrayList<MainArticleBean> mDisplayDatas;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDisplayStatus = getArguments().getInt("dispaly_status");
+        mDisplayStatus = getArguments().getInt("display_status");
+        String display_type = getArguments().getString("display_type");
+        mDisplayDatas = getTypeDatas(display_type);
     }
+
+
 
     @Nullable
     @Override
@@ -58,21 +66,25 @@ public class LatestUpdateFragment extends Fragment {
         //关联布局管理器
         rv_main.setLayoutManager(linearLayoutManager);
 
-        //临时模拟数据集合
-        ArrayList<String> strings = new ArrayList<>();
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
 
 
-        MyAdapter myAdapter = new MyAdapter(getContext(), strings);
+
+
+
+        MyAdapter myAdapter = new MyAdapter(getContext(), mDisplayDatas);
 
         //添加自定义的点击事件
         myAdapter.setOnClickListener(new ItemClickListener() {
             @Override
-            public void onItemClikc(View view, int postion) {
-                Snackbar.make(view, "点击了条目:" + postion, Snackbar.LENGTH_SHORT).show();
+            public void onItemClikc(View view, int position) {
+                MainArticleBean mainArticleBean = mDisplayDatas.get(position);
+                String className = mainArticleBean.getmClassName();
+
+
+                //添加点击item跳转到指定class类中
+                Intent intent = new Intent();
+                intent.setClassName(getContext(),className);
+                getContext().startActivity(intent);
             }
 
             @Override
@@ -108,11 +120,11 @@ public class LatestUpdateFragment extends Fragment {
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MViewHolder> {
 
         private Context context;
-        private List<String> mList;
+        private List<MainArticleBean> mList;
         private ItemClickListener mItemClickListener;       //自定义点击监听
 
 
-        public MyAdapter(Context context, List<String> mList) {
+        public MyAdapter(Context context, List<MainArticleBean> mList) {
             this.context = context;
             this.mList = mList;
         }
@@ -141,7 +153,13 @@ public class LatestUpdateFragment extends Fragment {
         @Override
         public void onBindViewHolder(MyAdapter.MViewHolder holder, int position) {
             Log.d(TAG, "onBindViewHolder: --position:" + position);
+            //根据不同的布局样式标记,来绑定不同的数据
+            if (mDisplayStatus == DIS_COMPLEXITY) {
 
+            } else if (mDisplayStatus == DIS_PLAIN){
+                MainArticleBean mainArticleBean = mList.get(position);
+                holder.tv_title.setText(mainArticleBean.getmTitle());
+            }
 
         }
 
@@ -152,12 +170,22 @@ public class LatestUpdateFragment extends Fragment {
         }
 
         public class MViewHolder extends RecyclerView.ViewHolder {
-            private ImageView mImageView;
-            private TextView mTextView;
+            public ImageView mImageView;           //连接图片展示
+            public TextView tv_title;              //标题头
+            public TextView tv_time;               //文章时间
 
 
             public MViewHolder(View itemView) {
                 super(itemView);
+
+                //根据不同的布局样式标记,来查找不同的控件
+                if (mDisplayStatus == DIS_COMPLEXITY) {
+
+                } else if (mDisplayStatus == DIS_PLAIN){
+                    tv_title = (TextView) itemView.findViewById(R.id.tv_title);
+                    tv_time = (TextView) itemView.findViewById(R.id.tv_time);
+                    mImageView = (ImageView) itemView.findViewById(R.id.iv_simple);
+                }
 //                mImageView = (ImageView) itemView.findViewById(R.id.iv_logo);
 //                mTextView  = (TextView) itemView.findViewById(R.id.tv_description);
 
@@ -260,5 +288,35 @@ public class LatestUpdateFragment extends Fragment {
 
         }
 
+    }
+
+
+    //通过fragment创建时传入的
+    private ArrayList<MainArticleBean> getTypeDatas(String display_type) {
+
+
+        //如果传入类型有错误, 直接返回一个空集合
+        if (display_type == null || TextUtils.isEmpty(display_type)){
+            return new ArrayList<MainArticleBean>();
+        }
+
+        ArrayList<MainArticleBean> datas;
+
+        if (display_type.equals(firstFragment.displayArrs[1])){
+            //graphics数据集合初始化
+            datas = new ArrayList<>();
+
+            //临时创建数据对象bean放入集合中
+            MainArticleBean mainArticleBean = new MainArticleBean();
+            mainArticleBean.setmTitle("绘图篇(1):drawText练习");
+            mainArticleBean.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.SuGraphicsDrawing2drawText");
+            datas.add(mainArticleBean);
+
+        }else{
+            datas = new ArrayList<>();
+
+        }
+
+        return datas;
     }
 }
