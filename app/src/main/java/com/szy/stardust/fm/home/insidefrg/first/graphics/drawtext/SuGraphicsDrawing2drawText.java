@@ -1,4 +1,4 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext;
 
 import android.support.v7.app.ActionBar;
 import android.widget.Toast;

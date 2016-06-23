@@ -309,8 +309,14 @@ public class LatestUpdateFragment extends Fragment {
             //临时创建数据对象bean放入集合中
             MainArticleBean mainArticleBean = new MainArticleBean();
             mainArticleBean.setmTitle("绘图篇(1):drawText练习");
-            mainArticleBean.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.SuGraphicsDrawing2drawText");
+            mainArticleBean.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.SuGraphicsDrawing2drawText");
             datas.add(mainArticleBean);
+
+            MainArticleBean mainArticleBean1 = new MainArticleBean();
+            mainArticleBean1.setmTitle("绘图篇(2):贝塞尔实现手势轨迹");
+            mainArticleBean1.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.SuGraphicsGestureTracksActivity");
+            datas.add(mainArticleBean1);
+
 
         }else{
             datas = new ArrayList<>();

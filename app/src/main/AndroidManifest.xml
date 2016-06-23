@@ -16,7 +16,8 @@
 
         </activity>
 
-        <activity android:name=".fm.home.insidefrg.first.graphics.SuGraphicsDrawing2drawText">
+        <activity android:name=".fm.home.insidefrg.first.graphics.drawtext.SuGraphicsDrawing2drawText"></activity>
+        <activity android:name=".fm.home.insidefrg.first.graphics.bezierripple.SuGraphicsGestureTracksActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
