@@ -1,4 +1,4 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.colormatrix;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,7 +10,6 @@ import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.SeekBar;
 
 import com.szy.stardust.R;

@@ -24,6 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         //显示系统默认的返回箭头
         toolbar.setDisplayHomeAsUpEnabled(true);
 
+        toolbar.hide();
 
 
         initView();

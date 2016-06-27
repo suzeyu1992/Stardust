@@ -1,16 +1,10 @@
 package com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext;
 
 import android.support.v7.app.ActionBar;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
-
-import java.io.IOException;
 
 /**
  * author: suzeyu on 16/6/20 12:18
@@ -25,6 +19,10 @@ public class SuGraphicsDrawing2drawText extends BaseActivity{
         ActionBar supportActionBar = getSupportActionBar();
 //        supportActionBar.hide();
         supportActionBar.setTitle("绘图(1)_drawText练习");
+
+        LinearLayout ll_body = (LinearLayout) findViewById(R.id.ll_root);
+        ll_body.removeAllViews();
+        ll_body.addView(new CusDrawTextView(getApplicationContext()));
 
     }
 

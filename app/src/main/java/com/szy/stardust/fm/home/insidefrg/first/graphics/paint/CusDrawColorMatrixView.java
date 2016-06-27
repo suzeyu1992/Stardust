@@ -1,16 +1,14 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.colormatrix;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.view.View;
 
 import com.szy.stardust.R;

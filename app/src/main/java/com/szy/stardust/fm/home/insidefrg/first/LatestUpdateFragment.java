@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.szy.stardust.R;
 import com.szy.stardust.adapter.re.ItemClickListener;
 import com.szy.stardust.data.bean.MainArticleBean;
+import com.szy.stardust.fm.home.insidefrg.first.graphics.bezierripple.SuGraphicsGestureTracksActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,11 +81,15 @@ public class LatestUpdateFragment extends Fragment {
                 MainArticleBean mainArticleBean = mDisplayDatas.get(position);
                 String className = mainArticleBean.getmClassName();
 
+//                    Class<?> aClass = Class.forName(className);
+                    //添加点击item跳转到指定class类中
+                    Intent intent = new Intent();
+                    intent.setClassName("com.szy.stardust",className);
 
-                //添加点击item跳转到指定class类中
-                Intent intent = new Intent();
-                intent.setClassName(getContext(),className);
-                getContext().startActivity(intent);
+                    getContext().startActivity(intent);
+
+
+
             }
 
             @Override
@@ -186,9 +191,6 @@ public class LatestUpdateFragment extends Fragment {
                     tv_time = (TextView) itemView.findViewById(R.id.tv_time);
                     mImageView = (ImageView) itemView.findViewById(R.id.iv_simple);
                 }
-//                mImageView = (ImageView) itemView.findViewById(R.id.iv_logo);
-//                mTextView  = (TextView) itemView.findViewById(R.id.tv_description);
-
                 //给item布局添加点击事件
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -302,20 +304,31 @@ public class LatestUpdateFragment extends Fragment {
 
         ArrayList<MainArticleBean> datas;
 
+        //graphics数据集合初始化
         if (display_type.equals(firstFragment.displayArrs[1])){
-            //graphics数据集合初始化
+
             datas = new ArrayList<>();
 
             //临时创建数据对象bean放入集合中
             MainArticleBean mainArticleBean = new MainArticleBean();
             mainArticleBean.setmTitle("绘图篇(1):drawText练习");
-            mainArticleBean.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.SuGraphicsDrawing2drawText");
+            mainArticleBean.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsDrawing2drawText");
             datas.add(mainArticleBean);
 
             MainArticleBean mainArticleBean1 = new MainArticleBean();
             mainArticleBean1.setmTitle("绘图篇(2):贝塞尔实现手势轨迹");
-            mainArticleBean1.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.SuGraphicsGestureTracksActivity");
+            mainArticleBean1.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsGestureTracksActivity");
             datas.add(mainArticleBean1);
+
+            MainArticleBean mainArticleBean2 = new MainArticleBean();
+            mainArticleBean2.setmTitle("绘图篇(3):paint之ColorMatrix过滤");
+            mainArticleBean2.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsColorMatrixActivity");
+            datas.add(mainArticleBean2);
+
+            MainArticleBean mainArticleBean3 = new MainArticleBean();
+            mainArticleBean3.setmTitle("绘图篇(4):paint之ColorFilter与PorterDuffColorFilter");
+            mainArticleBean3.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsColorFilterActivity");
+            datas.add(mainArticleBean3);
 
 
         }else{
