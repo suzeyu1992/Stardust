@@ -21,6 +21,9 @@
         <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsColorMatrixActivity"></activity>
         <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsColorFilterActivity"></activity>
         <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeActivity">
+
+        </activity>
+        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeHighActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

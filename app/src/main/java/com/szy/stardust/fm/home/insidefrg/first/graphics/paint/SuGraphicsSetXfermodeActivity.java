@@ -6,7 +6,6 @@ import android.widget.LinearLayout;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
@@ -26,11 +25,19 @@ public class SuGraphicsSetXfermodeActivity extends BaseActivity{
         final LinearLayout ll_root = (LinearLayout) findViewById(R.id.ll_body);
 
         //创建自定义view
+        //自定义view -- AvoidXfermode的演示
         CusDrawSetXfermodeView cusDrawColorMatrixView = new CusDrawSetXfermodeView(getApplicationContext());
+
+        //自定义view -- PorterDuffXfermode的模式区别展示
         CusDrawSetXfermode2PorterDuffXfermodeView cusDrawSetXfermode2PorterDuffXfermodeView = new CusDrawSetXfermode2PorterDuffXfermodeView(getApplicationContext());
+
+        //自定义view -- PorterDuffXfermode_1的实例演示
+        CusDrawSetXfermode2PorterDuffCombat_1 cusDrawSetXfermode2PorterDuffCombat = new CusDrawSetXfermode2PorterDuffCombat_1(getApplicationContext());
+
 
         ll_root.addView(cusDrawColorMatrixView);
         ll_root.addView(cusDrawSetXfermode2PorterDuffXfermodeView);
+        ll_root.addView(cusDrawSetXfermode2PorterDuffCombat);
 
 
     }
@@ -38,22 +45,7 @@ public class SuGraphicsSetXfermodeActivity extends BaseActivity{
     @Override
     protected void initListener() {
 
-        OkHttpClient okHttpClient = new OkHttpClient();
-        Request.Builder url = new Request.Builder().
-                url("http://120.27.37.22:8080/fang/fang/getMyFavorite.do?userId=5");
 
-//        url.addHeader("userId","5");
-        okHttpClient.newCall(url.build()).enqueue(new Callback() {
-            @Override
-            public void onFailure(Request request, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Response response) throws IOException {
-                Log.e("su",response.body().string());
-            }
-        });
     }
 
     @Override

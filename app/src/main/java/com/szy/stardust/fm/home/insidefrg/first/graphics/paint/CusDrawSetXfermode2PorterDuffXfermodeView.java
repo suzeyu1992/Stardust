@@ -11,6 +11,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.view.View;
 
@@ -21,7 +22,7 @@ import com.szy.stardust.util.UIUtils;
  * author: suzeyu on 16/6/27 18:06
  * github: https://github.com/suzeyu1992
  * -------------------------------------
- * class description : 练习paint中的setXfermode中的porterDuffXfermode
+ * class description : 观看paint中的setXfermode中的porterDuffXfermode中的各模式区别
  */
 public class CusDrawSetXfermode2PorterDuffXfermodeView extends View {
 
@@ -29,9 +30,9 @@ public class CusDrawSetXfermode2PorterDuffXfermodeView extends View {
     private final Bitmap mBitmap,dstBmp,srcBmp;
     private final int mCurWidth;            //当前屏幕的宽 pixel
     private final int mCurHeight;           //当前屏幕的高 pixel
+    private final DisplayMetrics mCurrentDisplayMetrics;
     private int width ;
     private int height;
-    private final DisplayMetrics mCurrentDisplayMetrics;
 
     public CusDrawSetXfermode2PorterDuffXfermodeView(Context context) {
         super(context);
@@ -76,18 +77,20 @@ public class CusDrawSetXfermode2PorterDuffXfermodeView extends View {
     }
 
     private void mPracticePorterDuffXfermode(Canvas canvas) {
+        canvas.translate(0,mCurrentDisplayMetrics.density * 10);
         //文字的总高
-        float textTotal = mCurrentDisplayMetrics.density * 10;
+        float textTotal = mCurrentDisplayMetrics.density * 15;
         //文字的基准线
-        float textBaseline = mCurrentDisplayMetrics.density * 8 ;
+        float textBaseline = mCurrentDisplayMetrics.density * 12 ;
         mPaint.setColor(Color.BLACK);
         mPaint.setTextSize(textTotal);
+        mPaint.setTypeface(Typeface.DEFAULT_BOLD);
         canvas.drawText("setXfermode 中 PorterDuffXfermode的演示",5,textBaseline,mPaint);
 //        canvas.drawBitmap(dstBmp, 0, 0, mPaint);        //黄色圆形
 //        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 //        canvas.drawBitmap(srcBmp, width/2, height/2, mPaint);       //蓝色矩形
 //        mPaint.setXfermode(null);
-
+        canvas.translate(0,textTotal*1.2f);
 
         //写出一行文字说明
         writeBody(canvas,new String[]{"Clear","Src","Dst","SrcOver"},0);
@@ -182,7 +185,7 @@ public class CusDrawSetXfermode2PorterDuffXfermodeView extends View {
         paintText.setColor(Color.BLACK);
         for (int x=0; x<bodyStr.length; x++){
             if (x==0) {
-                canvas.translate(0,textTotal);
+//                canvas.translate(0,textTotal);
                 canvas.drawText(bodyStr[x], 0, textBaseline, paintText);
                 //极限情况   当传入数组就有一个元素
                 if (1==bodyStr.length)
@@ -197,7 +200,5 @@ public class CusDrawSetXfermode2PorterDuffXfermodeView extends View {
 
             }
         }
-
-
     }
 }

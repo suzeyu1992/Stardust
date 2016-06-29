@@ -329,9 +329,14 @@ public class LatestUpdateFragment extends Fragment {
             datas.add(mainArticleBean3);
 
             MainArticleBean mainArticleBean4 = new MainArticleBean();
-            mainArticleBean4.setmTitle("绘图篇(4):paint之setXfermode");
+            mainArticleBean4.setmTitle("绘图篇(5):paint之setXfermode");
             mainArticleBean4.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeActivity");
             datas.add(mainArticleBean4);
+
+            MainArticleBean mainArticleBean5 = new MainArticleBean();
+            mainArticleBean5.setmTitle("绘图篇(6):paint之setXfermode 使用场景1");
+            mainArticleBean5.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeHighActivity");
+            datas.add(mainArticleBean5);
 
 
         }else{
