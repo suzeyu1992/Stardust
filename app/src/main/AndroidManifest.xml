@@ -13,17 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".fm.home.MainActivity">
+
+        </activity>
+
+        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsDrawing2drawText"></activity>
+        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsGestureTracksActivity"></activity>
+        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsColorMatrixActivity"></activity>
+        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsColorFilterActivity"></activity>
+        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".fm.home.insidefrg.first.graphics.drawtext.SuGraphicsDrawing2drawText"></activity>
-        <activity android:name=".fm.home.insidefrg.first.graphics.bezierripple.SuGraphicsGestureTracksActivity"></activity>
-        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsColorMatrixActivity"></activity>
-        <activity android:name=".fm.home.insidefrg.first.graphics.paint.SuGraphicsColorFilterActivity">
-
         </activity>
     </application>
 

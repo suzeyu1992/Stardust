@@ -7,7 +7,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,7 +23,6 @@ import android.widget.Toast;
 import com.szy.stardust.R;
 import com.szy.stardust.adapter.re.ItemClickListener;
 import com.szy.stardust.data.bean.MainArticleBean;
-import com.szy.stardust.fm.home.insidefrg.first.graphics.bezierripple.SuGraphicsGestureTracksActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -329,6 +327,11 @@ public class LatestUpdateFragment extends Fragment {
             mainArticleBean3.setmTitle("绘图篇(4):paint之ColorFilter与PorterDuffColorFilter");
             mainArticleBean3.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsColorFilterActivity");
             datas.add(mainArticleBean3);
+
+            MainArticleBean mainArticleBean4 = new MainArticleBean();
+            mainArticleBean4.setmTitle("绘图篇(4):paint之setXfermode");
+            mainArticleBean4.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeActivity");
+            datas.add(mainArticleBean4);
 
 
         }else{

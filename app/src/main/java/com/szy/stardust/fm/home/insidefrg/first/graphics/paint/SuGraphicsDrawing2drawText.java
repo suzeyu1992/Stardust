@@ -1,10 +1,11 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
 
 import android.support.v7.app.ActionBar;
 import android.widget.LinearLayout;
 
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
+import com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.CusDrawTextView;
 
 /**
  * author: suzeyu on 16/6/20 12:18
