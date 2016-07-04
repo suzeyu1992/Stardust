@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.szy.stardust.R;
-import com.szy.stardust.fm.home.insidefrg.BaseInsidePagerFragment;
-import com.szy.stardust.fm.home.myinfo.HomePagerFragment;
+import com.szy.stardust.fm.myinfo.HomePagerFragment;
 
 /**
  * author: suzeyu on 16/6/8 00:11

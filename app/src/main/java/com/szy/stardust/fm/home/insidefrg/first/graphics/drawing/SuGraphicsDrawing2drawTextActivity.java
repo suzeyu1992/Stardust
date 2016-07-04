@@ -1,11 +1,10 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
 import android.support.v7.app.ActionBar;
 import android.widget.LinearLayout;
 
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
-import com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.CusDrawTextView;
 
 /**
  * author: suzeyu on 16/6/20 12:18
@@ -13,7 +12,7 @@ import com.szy.stardust.fm.home.insidefrg.first.graphics.drawtext.CusDrawTextVie
  * -------------------------------------
  * class description : 自定义控件绘图(1)--- drawText练习
  */
-public class SuGraphicsDrawing2drawText extends BaseActivity{
+public class SuGraphicsDrawing2drawTextActivity extends BaseActivity{
     @Override
     protected void initView() {
         setContentView(R.layout.activity_graphics_drawtext);

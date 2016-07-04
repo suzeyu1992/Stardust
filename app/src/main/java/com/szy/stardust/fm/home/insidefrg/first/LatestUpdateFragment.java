@@ -308,35 +308,45 @@ public class LatestUpdateFragment extends Fragment {
             datas = new ArrayList<>();
 
             //临时创建数据对象bean放入集合中
-            MainArticleBean mainArticleBean = new MainArticleBean();
-            mainArticleBean.setmTitle("绘图篇(1):drawText练习");
-            mainArticleBean.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsDrawing2drawText");
-            datas.add(mainArticleBean);
-
             MainArticleBean mainArticleBean1 = new MainArticleBean();
-            mainArticleBean1.setmTitle("绘图篇(2):贝塞尔实现手势轨迹");
-            mainArticleBean1.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsGestureTracksActivity");
+            mainArticleBean1.setmTitle("绘图篇(1):Canvas和Paint的基本使用展示");
+            mainArticleBean1.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsBaseCanvasPaintActivity");
             datas.add(mainArticleBean1);
 
             MainArticleBean mainArticleBean2 = new MainArticleBean();
-            mainArticleBean2.setmTitle("绘图篇(3):paint之ColorMatrix过滤");
-            mainArticleBean2.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsColorMatrixActivity");
+            mainArticleBean2.setmTitle("绘图篇(2):");
+            mainArticleBean2.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsDrawing2drawTextActivity");
             datas.add(mainArticleBean2);
 
             MainArticleBean mainArticleBean3 = new MainArticleBean();
-            mainArticleBean3.setmTitle("绘图篇(4):paint之ColorFilter与PorterDuffColorFilter");
-            mainArticleBean3.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsColorFilterActivity");
+            mainArticleBean3.setmTitle("绘图篇(3):drawText练习");
+            mainArticleBean3.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsDrawing2drawTextActivity");
             datas.add(mainArticleBean3);
 
             MainArticleBean mainArticleBean4 = new MainArticleBean();
-            mainArticleBean4.setmTitle("绘图篇(5):paint之setXfermode");
-            mainArticleBean4.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeActivity");
+            mainArticleBean4.setmTitle("绘图篇(4):贝塞尔实现手势轨迹");
+            mainArticleBean4.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsGestureTracksActivity");
             datas.add(mainArticleBean4);
 
             MainArticleBean mainArticleBean5 = new MainArticleBean();
-            mainArticleBean5.setmTitle("绘图篇(6):paint之setXfermode 使用场景1");
-            mainArticleBean5.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.paint.SuGraphicsSetXfermodeHighActivity");
+            mainArticleBean5.setmTitle("绘图篇(5):paint之ColorMatrix过滤");
+            mainArticleBean5.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsColorMatrixActivity");
             datas.add(mainArticleBean5);
+
+            MainArticleBean mainArticleBean6 = new MainArticleBean();
+            mainArticleBean6.setmTitle("绘图篇(6):paint之ColorFilter与PorterDuffColorFilter");
+            mainArticleBean6.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsColorFilterActivity");
+            datas.add(mainArticleBean6);
+
+            MainArticleBean mainArticleBean7 = new MainArticleBean();
+            mainArticleBean7.setmTitle("绘图篇(7):paint之setXfermode");
+            mainArticleBean7.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsSetXfermodeActivity");
+            datas.add(mainArticleBean7);
+
+            MainArticleBean mainArticleBean8 = new MainArticleBean();
+            mainArticleBean8.setmTitle("绘图篇(8):paint之setXfermode 使用场景1");
+            mainArticleBean8.setmClassName("com.szy.stardust.fm.home.insidefrg.first.graphics.drawing.SuGraphicsSetXfermodeHighActivity");
+            datas.add(mainArticleBean8);
 
 
         }else{

@@ -1,4 +1,4 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.view.View;
 

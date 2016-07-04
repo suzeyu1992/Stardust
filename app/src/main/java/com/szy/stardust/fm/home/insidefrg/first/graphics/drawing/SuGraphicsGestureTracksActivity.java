@@ -1,15 +1,12 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
 import android.support.v7.app.ActionBar;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
-import com.szy.stardust.fm.home.insidefrg.first.graphics.bezierripple.CusDrawGestureTracks;
-import com.szy.stardust.fm.home.insidefrg.first.graphics.bezierripple.CusDrawRippleView;
 
 /**
  * author: suzeyu on 16/6/23 15:20

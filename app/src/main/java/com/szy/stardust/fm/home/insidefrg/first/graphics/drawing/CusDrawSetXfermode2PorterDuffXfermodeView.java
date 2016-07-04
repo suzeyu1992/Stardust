@@ -1,7 +1,6 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
 import android.content.Context;
-import android.graphics.AvoidXfermode;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -9,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.util.DisplayMetrics;
@@ -128,13 +126,18 @@ public class CusDrawSetXfermode2PorterDuffXfermodeView extends View {
             return;
 
         int length = modes.length;
+        //每一个单元元素的宽度
+        float oneWidth = mCurWidth/4f;
 
         mPaint.setStyle(Paint.Style.STROKE);
         for (int x=0; x<length; x++){
-            canvas.drawRect(mCurWidth/4*x,0,mCurWidth/4*(x+0.8f),mCurWidth/4*0.8f,mPaint );
-            canvas.drawBitmap(dstBmp, mCurWidth/4*x, 0, mPaint);        //黄色圆形
+            //画最外层包裹矩形
+            canvas.drawRect(oneWidth*x,0,oneWidth*(x+0.8f),oneWidth*0.8f,mPaint );
+            //画DTS目标
+            canvas.drawBitmap(dstBmp, oneWidth*x, 0, mPaint);        //黄色圆形
             mPaint.setXfermode(new PorterDuffXfermode(modes[x]));
-            canvas.drawBitmap(srcBmp, mCurWidth/4*x + width/2, height/2, mPaint);       //蓝色矩形
+            //画SRC目标
+            canvas.drawBitmap(srcBmp, oneWidth*x + width/2, height/2, mPaint);       //蓝色矩形
             mPaint.setXfermode(null);
         }
 

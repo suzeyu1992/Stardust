@@ -3,22 +3,17 @@ package com.szy.stardust.adapter;
 
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
-import android.util.Log;;
+;
 
 
-import com.szy.stardust.R;
 import com.szy.stardust.data.bean.DBMainFragment;
-import com.szy.stardust.fm.home.myinfo.HomePagerFragment;
-import com.szy.stardust.util.BitmapUtil;
 
 import java.util.ArrayList;
 

@@ -1,16 +1,9 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
-import android.util.Log;
 import android.widget.LinearLayout;
 
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
-
-import java.io.IOException;
 
 /**
  * author: suzeyu on 16/6/27 18:02

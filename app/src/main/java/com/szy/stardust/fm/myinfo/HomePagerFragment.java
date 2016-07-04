@@ -1,26 +1,19 @@
-package com.szy.stardust.fm.home.myinfo;
+package com.szy.stardust.fm.myinfo;
 
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.szy.stardust.R;
 import com.szy.stardust.data.bean.DBFragment;
-import com.szy.stardust.fm.home.insidefrg.BaseInsidePagerFragment;
-import com.szy.stardust.fm.home.insidefrg.first.LatestUpdateFragment;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * author: suzeyu on 16/6/6 18:03

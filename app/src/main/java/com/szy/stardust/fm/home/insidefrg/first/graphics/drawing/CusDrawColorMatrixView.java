@@ -1,4 +1,4 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
 import android.content.Context;
 import android.graphics.Bitmap;

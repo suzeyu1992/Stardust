@@ -8,11 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.szy.stardust.R;
 import com.szy.stardust.data.bean.DBFragment;
-import com.szy.stardust.fm.home.myinfo.HomePagerFragment;
+import com.szy.stardust.fm.myinfo.HomePagerFragment;
 
 import java.util.ArrayList;
 

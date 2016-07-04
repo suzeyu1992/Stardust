@@ -1,13 +1,9 @@
-package com.szy.stardust.fm.home.insidefrg.first.graphics.paint;
+package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
-import android.support.v7.app.ActionBar;
-import android.util.DisplayMetrics;
-import android.view.View;
 import android.widget.LinearLayout;
 
 import com.szy.stardust.R;
 import com.szy.stardust.base.BaseActivity;
-import com.szy.stardust.util.UIUtils;
 
 /**
  * author: suzeyu on 16/6/27 14:50
