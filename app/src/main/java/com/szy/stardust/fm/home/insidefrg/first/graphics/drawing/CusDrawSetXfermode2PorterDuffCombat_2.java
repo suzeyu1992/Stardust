@@ -21,6 +21,8 @@ import android.view.animation.LinearInterpolator;
 import com.szy.stardust.R;
 import com.szy.stardust.util.UIUtils;
 
+import java.util.HashMap;
+
 /**
  * author: suzeyu on 16/6/29 12:32
  * github: https://github.com/suzeyu1992
@@ -64,7 +66,7 @@ public class CusDrawSetXfermode2PorterDuffCombat_2 extends View {
 
         count = 0;
 
-        startAnim();
+       // startAnim();
 
 
     }
@@ -72,11 +74,18 @@ public class CusDrawSetXfermode2PorterDuffCombat_2 extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         setMeasuredDimension(mCurWidth, mCurHeight);
+
+        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
+
+       
     }
+
+
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         //写出当前View的功能
         mPaint.setColor(Color.BLACK);
         canvas.drawRect(0, 0, mCurWidth, mCurHeight, mPaint);

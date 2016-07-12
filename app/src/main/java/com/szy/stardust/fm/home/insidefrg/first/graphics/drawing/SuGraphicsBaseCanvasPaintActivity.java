@@ -20,6 +20,7 @@ public class SuGraphicsBaseCanvasPaintActivity extends BaseActivity {
 
         CusDrawBaseCanvasPaintView cusDrawBaseCanvasPaintView = new CusDrawBaseCanvasPaintView(getApplicationContext());
         ll_body.addView(cusDrawBaseCanvasPaintView);
+
     }
 
 

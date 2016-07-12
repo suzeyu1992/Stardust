@@ -144,8 +144,8 @@ public class CusDrawBaseCanvasPaintView extends View {
         mPaint.setColor(Color.WHITE);
         mPaint.setTextAlign(Paint.Align.LEFT);
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setShadowLayer(mDensity*2, mDensity*15, mDensity*10, Color.RED );      //设置文字的阴影, 参数分别为:每一点像素模糊的半径, x轴偏移的距离, y轴偏移的距离, 阴影的颜色
-        canvas.drawText("阴影文字演示", 0, 25*mDensity, mPaint);  //绘制文字, 参数2:文字绘制的x轴起点, 参数3: 文字绘制在的基准线位置Y轴
+        mPaint.setShadowLayer(mDensity*5, mDensity*15, mDensity*10, Color.RED );      //设置文字的阴影, 参数分别为:每一点像素模糊的半径, x轴偏移的距离, y轴偏移的距离, 阴影的颜色
+        canvas.drawText("阴影文字演示", 0, 25*mDensity, mPaint);                       //绘制文字, 参数2:文字绘制的x轴起点, 参数3: 文字绘制在的基准线位置Y轴
         //移动画布的圆点位置 参数表示为x和y的偏移量,  方便绘制的时候需要计算起始点繁琐的问题
         canvas.translate(0,40 * mDensity);
 
@@ -247,7 +247,6 @@ public class CusDrawBaseCanvasPaintView extends View {
         path.moveTo(10*mDensity, 10*mDensity);                        //设定起始点
         path.lineTo(10*mDensity, 100*mDensity);                       //第一条直线的终点，也是第二条直线的起点
         path.lineTo(200*mDensity,100*mDensity);                       //画第二条直线
-        path.lineTo(10*mDensity, 10*mDensity);                        //第三条直线, 回到起始点,也可以不写调用close自动关闭路径
         path.close();//闭环
         canvas.drawPath(path, mPaint);
         canvas.translate(0,110*mDensity);
@@ -258,10 +257,12 @@ public class CusDrawBaseCanvasPaintView extends View {
         Path CCWRectpath = new Path();
         RectF rect1 =  new RectF(30*mDensity, 10*mDensity, 110*mDensity, 60*mDensity);
         CCWRectpath.addRect(rect1, Path.Direction.CCW);
+
         //顺向生成生成
         Path CWRectpath = new Path();
         RectF rect2 =  new RectF(130*mDensity, 10*mDensity, 210*mDensity, 60*mDensity);
         CWRectpath.addRect(rect2, Path.Direction.CW);
+
         //先画出这两个路径
         canvas.drawPath(CCWRectpath, mPaint);
         canvas.drawPath(CWRectpath, mPaint);

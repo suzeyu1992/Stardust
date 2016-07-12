@@ -19,7 +19,7 @@ import com.szy.stardust.R;
  */
 public class CusDrawTextView extends View {
     public final String TAG = getClass().getSimpleName();
-    public final String mSimpleStr = "just do it";
+    public final String mSimpleStr = "just do it Y";
 
     public CusDrawTextView(Context context) {
         super(context);
@@ -48,14 +48,14 @@ public class CusDrawTextView extends View {
         //写文字  just do it
         paint.setColor(Color.GREEN);
         paint.setTextSize(120);                                         //默认是px为单位
-        paint.setTextAlign(Paint.Align.LEFT);                         //其中Align的取值为：Paint.Align.LEFT,Paint.Align.CENTER,Paint.Align.RIGHT
+        paint.setTextAlign(Paint.Align.LEFT);                           //其中Align的取值为：Paint.Align.LEFT,Paint.Align.CENTER,Paint.Align.RIGHT
         // 1、drawText是中的参数y是基线的位置。
         // 2、一定要清楚的是，只要x坐标、基线位置、文字大小确定以后，文字的位置就是确定的了
         canvas.drawText(mSimpleStr,baseLineX,baseLineY,paint);
 
         /*******************************************************************************************
          *****                                                                                 *****
-         *****           获得fontMetrics()对象来画出五线格                                         *****
+         *****           获得fontMetrics()对象来画出五线格                                        *****
          *****                                                                                 *****
          ********************************************************************************************/
         Paint.FontMetrics fontMetrics = paint.getFontMetrics();
@@ -90,7 +90,7 @@ public class CusDrawTextView extends View {
         int width = (int) paint.measureText(mSimpleStr);
         //画出textview所占的区域
         paint.setColor(Color.BLUE);
-        canvas.drawRect(baseLineX,top,baseLineX+width,bottom,paint);
+//        canvas.drawRect(baseLineX,top,baseLineX+width,bottom,paint);
 
         //获得最小矩形  此时得到的矩形是相对于字体的baseline   所以如果想重叠在我们写的字体上,只要对准字体的baseline和矩形的baseline即可
         Rect minRect = new Rect();
@@ -100,7 +100,7 @@ public class CusDrawTextView extends View {
         minRect.left = minRect.left + baseLineX;
         minRect.right = minRect.right + baseLineX;
         paint.setColor(Color.RED);
-        canvas.drawRect(minRect,paint);
+//        canvas.drawRect(minRect,paint);
 
         paint.setColor(Color.GREEN);
         canvas.drawText(mSimpleStr,baseLineX,baseLineY,paint);

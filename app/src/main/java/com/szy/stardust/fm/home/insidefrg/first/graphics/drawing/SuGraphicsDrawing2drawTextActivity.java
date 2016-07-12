@@ -16,12 +16,10 @@ public class SuGraphicsDrawing2drawTextActivity extends BaseActivity{
     @Override
     protected void initView() {
         setContentView(R.layout.activity_graphics_drawtext);
-        ActionBar supportActionBar = getSupportActionBar();
-//        supportActionBar.hide();
-        supportActionBar.setTitle("绘图(1)_drawText练习");
 
         LinearLayout ll_body = (LinearLayout) findViewById(R.id.ll_root);
         ll_body.removeAllViews();
+        //添加自定义View
         ll_body.addView(new CusDrawTextView(getApplicationContext()));
 
     }

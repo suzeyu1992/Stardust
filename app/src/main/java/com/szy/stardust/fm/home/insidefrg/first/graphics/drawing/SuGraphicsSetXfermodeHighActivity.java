@@ -1,5 +1,8 @@
 package com.szy.stardust.fm.home.insidefrg.first.graphics.drawing;
 
+import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.widget.LinearLayout;
 
 import com.szy.stardust.R;
@@ -19,10 +22,12 @@ public class SuGraphicsSetXfermodeHighActivity extends BaseActivity{
 
 
         //自定义view -- PorterDuffXfermode_2的实例演示
-        CusDrawSetXfermode2PorterDuffCombat_2 cusDrawSetXfermode2PorterDuffCombat2 = new CusDrawSetXfermode2PorterDuffCombat_2(getApplicationContext());
+        final CusDrawSetXfermode2PorterDuffCombat_2 cusDrawSetXfermode2PorterDuffCombat2 = new CusDrawSetXfermode2PorterDuffCombat_2(getApplicationContext());
 
 
         ll_root.addView(cusDrawSetXfermode2PorterDuffCombat2);
+
+//        cusDrawSetXfermode2PorterDuffCombat2.setBtm(BitmapFactory.decodeResource(getResources(),R.mipmap.icon_experiment_cs));
 
 
     }
