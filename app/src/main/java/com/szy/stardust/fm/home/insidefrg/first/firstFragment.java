@@ -35,6 +35,7 @@ public class firstFragment extends HomePagerFragment implements View.OnClickList
         vp_main = (ViewPager) view.findViewById(R.id.vp_main);
         iv_tab_func = (ImageView) view.findViewById(R.id.iv_tab_func);
 
+
         //为点击事件添加监听
         iv_tab_func.setOnClickListener(this);
 

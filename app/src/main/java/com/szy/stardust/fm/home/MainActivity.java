@@ -1,7 +1,9 @@
 package com.szy.stardust.fm.home;
 
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -17,6 +19,7 @@ import com.szy.stardust.base.BaseActivity;
 import com.szy.stardust.data.bean.DBMainFragment;
 import com.szy.stardust.data.bean.MyInfoBean;
 import com.szy.stardust.util.CheckUtil;
+import com.szy.stardust.util.UIUtils;
 
 import java.util.ArrayList;
 
@@ -44,6 +47,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         setContentView(R.layout.activity_main);
         ActionBar supportActionBar = getSupportActionBar();
         supportActionBar.hide();
+
 
 
 
